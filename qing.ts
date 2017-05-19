@@ -1,4 +1,3 @@
-// if (window.XuntongJSBridge:any) return;
 // {
 // Android加上了这个if判断，如果当前window已经定义了XuntongBridge对象，不再重新加载
 // 避免重新初始化_callback_map等变量，导致之前的消息回调失败，返回cb404
@@ -73,5 +72,7 @@ var XuntongJSBridge = {
   call: _call,
   handleMessageFromXT: _handleMessageFromXT
 };
+
+(<any>window).XuntongJSBridge= XuntongJSBridge;
 
 export { XuntongJSBridge };

@@ -6,8 +6,7 @@
   "description": "云之家轻应用库的es6版本",
   "devDependencies": {
     "ts-loader": "^2.0.3",
-    "typescript": "^2.3.2",
-    "webpack": "^2.2.1"
+    "typescript": "^2.3.2"
   },
   "directories": {},
   "repository": {
@@ -26,9 +25,9 @@
   "optionalDependencies": {},
   "readme": "ERROR: No README data found!",
   "scripts": {
-    "build": "webpack",
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "typings": "index",
-  "version": "1.0.12"
+  "version": "1.0.18"
 }
