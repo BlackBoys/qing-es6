@@ -1,6 +1,6 @@
 ## 为什么会有这个库
 
-为轻应用的JSBridge提供一个Promise版的js调用,注意这个库还不能在浏览器里直接使用,请在babel或者typescript环境下的项目使用。
+为轻应用的JSBridge提供一个Promise版的js调用,注意这个库还不能在浏览器里直接使用,请在babel环境下使用。
 
 ### 1. 获取用户信息
 
