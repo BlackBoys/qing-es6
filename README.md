@@ -19,7 +19,7 @@ console.dir(error);
 
 ```javascript
 import {jsbUtil} from "qing-es6";
-jsbUtil.selectPersons({pType:1,isMulti:false})
+jsbUtil.selectPersons({pType:1,isMulti:true})
 .then(function(usersData){
 
 })
