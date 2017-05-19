@@ -1,5 +1,5 @@
 import XuntongJSBridge from "./qing";
-let getUser = function () {
+let getPersonInfo = function () {
     return new Promise(function (resolve, reject) {
         XuntongJSBridge.call('getPersonInfo', {}, function (result) {
             if (result.success) resolve(result.data);
@@ -17,4 +17,4 @@ let selectPersons = function (config) {
     });
 }
 
-export { getUser, selectPersons };
+export { getPersonInfo, selectPersons };

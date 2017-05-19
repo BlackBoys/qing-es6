@@ -6,7 +6,7 @@
 
 ```javascript
 import {jsbUtil} from "qing-es6";
-jsbUtil.getUser()
+jsbUtil.getPersonInfo()
 .then(function(userData){
 
 })

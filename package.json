@@ -65,6 +65,10 @@
   "description": "云之家轻应用库的es6版本",
   "devDependencies": {},
   "directories": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BlackBoys/qing-es6.git"
+  },
   "dist": {
     "shasum": "8a3b713061f9c10d977dfb2cdc440ccc5bb3e643",
     "tarball": "https://registry.npmjs.org/qing-es6/-/qing-es6-1.0.8.tgz"
@@ -84,5 +88,5 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "typings": "index",
-  "version": "1.0.8"
+  "version": "1.0.10"
 }
