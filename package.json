@@ -1,63 +1,4 @@
 {
-  "_args": [
-    [
-      {
-        "raw": "qing-es6@^1.0.4",
-        "scope": null,
-        "escapedName": "qing-es6",
-        "name": "qing-es6",
-        "rawSpec": "^1.0.4",
-        "spec": ">=1.0.4 <2.0.0",
-        "type": "range"
-      },
-      "/Users/luoxiao/project/es6test"
-    ],
-    [
-      {
-        "raw": "qing-es6",
-        "scope": null,
-        "escapedName": "qing-es6",
-        "name": "qing-es6",
-        "rawSpec": "",
-        "spec": "latest",
-        "type": "tag"
-      },
-      "/Users/luoxiao/project/es6test"
-    ]
-  ],
-  "_from": "qing-es6",
-  "_id": "qing-es6@1.0.8",
-  "_inCache": true,
-  "_location": "/qing-es6",
-  "_nodeVersion": "7.9.0",
-  "_npmOperationalInternal": {
-    "host": "packages-12-west.internal.npmjs.com",
-    "tmp": "tmp/qing-es6-1.0.8.tgz_1495177863338_0.22961367829702795"
-  },
-  "_npmUser": {
-    "name": "goodevent",
-    "email": "1807657825@qq.com"
-  },
-  "_npmVersion": "4.2.0",
-  "_phantomChildren": {},
-  "_requested": {
-    "raw": "qing-es6",
-    "scope": null,
-    "escapedName": "qing-es6",
-    "name": "qing-es6",
-    "rawSpec": "",
-    "spec": "latest",
-    "type": "tag"
-  },
-  "_requiredBy": [
-    "#USER",
-    "/"
-  ],
-  "_resolved": "https://registry.npmjs.org/qing-es6/-/qing-es6-1.0.8.tgz",
-  "_shasum": "8a3b713061f9c10d977dfb2cdc440ccc5bb3e643",
-  "_shrinkwrap": null,
-  "_spec": "qing-es6",
-  "_where": "/Users/luoxiao/project/es6test",
   "author": {
     "name": "GoodEvent"
   },
@@ -68,10 +9,6 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/BlackBoys/qing-es6.git"
-  },
-  "dist": {
-    "shasum": "8a3b713061f9c10d977dfb2cdc440ccc5bb3e643",
-    "tarball": "https://registry.npmjs.org/qing-es6/-/qing-es6-1.0.8.tgz"
   },
   "license": "ISC",
   "main": "index",
