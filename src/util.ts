@@ -1,24 +1,5 @@
 import { XuntongJSBridge } from "./qing";
-
-class Error {
-    error: string;
-    errorCode: number;
-    constructor(result: Error) {
-        this.error = result.error;
-        this.errorCode = result.errorCode;
-    }
-}
-
-class SelectFileConfig {
-    selectType: string
-}
-
-class ScanQRCodeConfig {
-    needResult: number;
-    scanType: ArrayConstructor;
-}
-
-
+import { Error } from "./error";
 class JsbUtil {
     call(methname: string, config: any) {
         return new Promise(function (resolve, reject) {
@@ -50,8 +31,10 @@ class JsbUtil {
         return this.call('localFunction', { 'name': 'createChat' });
     }
 
-    selectFile(config?: SelectFileConfig) {
-        if (config) return this.call('selectFile', config);
+    selectFile(selectType?: string) {
+        if (selectType) return this.call('selectFile', {
+            selectType: selectType
+        });
         else return this.call('selectFile', {});
     }
 
@@ -63,8 +46,11 @@ class JsbUtil {
         return this.call('selectPic', {});
     }
 
-    scanQRCode(config: ScanQRCodeConfig) {
-        return this.call('scanQRCode', config);
+    scanQRCode(needResult: number, scanType: ArrayConstructor) {
+        return this.call('scanQRCode', {
+            needResult: needResult,
+            scanType: scanType
+        });
     }
 
     selectOrg() {
