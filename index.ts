@@ -1,9 +1,6 @@
 import { XuntongJSBridge } from "./qing";
-import { getPersonInfo, selectPersons } from "./util";
+import { JsbUtil } from "./util";
 
-let jsbUtil = {
-    getPersonInfo: getPersonInfo,
-    selectPersons: selectPersons
-}
+let jsbUtil = new JsbUtil();
 
-export { XuntongJSBridge, getPersonInfo, selectPersons, jsbUtil };
+export { XuntongJSBridge, jsbUtil };
