@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "noImplicitAny": true,
+    "outDir": "dist",
     "target": "esnext",
     "allowJs": true
   }

@@ -4,15 +4,14 @@
   },
   "dependencies": {},
   "description": "云之家轻应用库的es6版本",
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "directories": {},
   "repository": {
     "type": "git",
     "url": "https://github.com/BlackBoys/qing-es6.git"
   },
   "license": "ISC",
-  "main": "index",
+  "main": "dist/index",
   "maintainers": [
     {
       "name": "goodevent",
@@ -26,6 +25,6 @@
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "typings": "index",
+  "typings": "src/index",
   "version": "1.0.20"
 }
