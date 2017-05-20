@@ -5,8 +5,6 @@
   "dependencies": {},
   "description": "云之家轻应用库的es6版本",
   "devDependencies": {
-    "ts-loader": "^2.0.3",
-    "typescript": "^2.3.2"
   },
   "directories": {},
   "repository": {
@@ -29,5 +27,5 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "typings": "index",
-  "version": "1.0.18"
+  "version": "1.0.20"
 }

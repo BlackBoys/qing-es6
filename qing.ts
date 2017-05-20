@@ -7,14 +7,14 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////// 
 ///////////////////////////////////本地调用的实际逻辑////////////////////////////////////////////
-var _CUSTOM_PROTOCOL_SCHEME = 'xuntong',
+let _CUSTOM_PROTOCOL_SCHEME = 'xuntong',
   callbacksCount = 1,
   callbacks: any = {};
 
 function _handleMessageFromXT(callbackId: any, message: any) {
 
   try {
-    var callback = callbacks[callbackId];
+    let callback = callbacks[callbackId];
     if (!callback) return;
     callback.apply(null, [message]);
   } catch (e) {
@@ -27,7 +27,7 @@ function _handleMessageFromXT(callbackId: any, message: any) {
  * @returns {string}
  */
 function getOS() {
-  var userAgent = navigator.userAgent;
+  let userAgent = navigator.userAgent;
   return userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/) ? 'ios' : userAgent.match(/Android/i) ? 'android' : '';
 }
 /**
@@ -35,7 +35,7 @@ function getOS() {
  * @returns {Array|{index: number, input: string}}
  */
 function isCloudHub() {
-  var userAgent = navigator.userAgent;
+  let userAgent = navigator.userAgent;
   return userAgent.match(/App\/cloudhub/);
 }
 
@@ -46,13 +46,13 @@ function isCloudHub() {
 function _call(functionName: any, message: any, callback: any) {
   //只有在手机或电脑端云之家中才允许调用Xuntong JSBridge
   if (!(getOS() || isCloudHub())) return false;
-  var hasCallback = callback && typeof callback == "function";
-  var callbackId = hasCallback ? callbacksCount++ : 0;
+  let hasCallback = callback && typeof callback == "function";
+  let callbackId = hasCallback ? callbacksCount++ : 0;
 
   if (hasCallback)
     callbacks[callbackId] = callback;
 
-  var iframe = document.createElement("IFRAME");
+  let iframe = document.createElement("IFRAME");
   iframe.setAttribute("src", _CUSTOM_PROTOCOL_SCHEME + ":" + functionName + ":" + callbackId + ":" + encodeURIComponent(JSON.stringify(message)));
   // For some reason we need to set a non-empty size for the iOS6 simulator...
   iframe.setAttribute("height", "1px");
@@ -66,13 +66,15 @@ function _call(functionName: any, message: any, callback: any) {
 
 
 
-var XuntongJSBridge = {
+let _XuntongJSBridge = {
   // public
   invoke: _call,
   call: _call,
   handleMessageFromXT: _handleMessageFromXT
 };
+if (!(<any>window).XuntongJSBridge) {
+  (<any>window).XuntongJSBridge = _XuntongJSBridge;
+}
 
-(<any>window).XuntongJSBridge= XuntongJSBridge;
-
-export { XuntongJSBridge };
+let RealXuntongJSBridge = (<any>window).XuntongJSBridge;
+export { RealXuntongJSBridge as XuntongJSBridge };
