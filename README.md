@@ -1,6 +1,6 @@
 ## 为什么会有这个库
 
-为轻应用的JSBridge某些不友好的回调方法提供一个Promise版的js调用,注意这个库还不能在浏览器里直接使用,请在babel环境下使用。
+为轻应用的JSBridge某些不友好的回调方法提供一个Promise版的js调用,注意这个库还不能在浏览器里直接使用,请在babel或ts环境下使用。
 
 ### 1. import方式引入JSBridge对象
 
