@@ -50,7 +50,7 @@ console.dir(error);
 
 ```javascript
 import {jsbUtil} from "qing-es6";
-jsbUtil.selectPersons(true,1})
+jsbUtil.selectPersons(true,1)
 .then(function(usersData){
 
 })
