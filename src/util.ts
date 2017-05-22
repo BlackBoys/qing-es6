@@ -4,8 +4,8 @@ class JsbUtil {
     call(methname: string, config: any) {
         return new Promise(function (resolve, reject) {
             XuntongJSBridge.call(methname, config, function (result: any) {
-                if (result.success === "true") resolve(result.data);
-                else if (result.success === "false") reject(new Error(result))
+                if (result.success === "true" || result.success === true) resolve(result.data);
+                else if (result.success === "false" || result.success === false) reject(new Error(result))
             });
         })
     }
