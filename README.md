@@ -6,7 +6,7 @@
 
 ```javascript
 import {XuntongJSBridge} from "qing-es6";
-XuntongJSBridge.call(‘hideOptionMenu’);
+XuntongJSBridge.call('hideOptionMenu');
 ```
 
 ### 1. 使用JsbUtil的call方法替代XuntongJSBridge的call方法
