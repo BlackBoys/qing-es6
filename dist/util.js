@@ -1,93 +1,99 @@
-import { XuntongJSBridge } from "./qing";
-import { Error } from "./error";
-class JsbUtil {
-    call(methname, config) {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var qing_1 = require("./qing");
+exports.XuntongJSBridge = qing_1.XuntongJSBridge;
+var error_1 = require("./error");
+var JsbUtil = (function () {
+    function JsbUtil() {
+    }
+    JsbUtil.prototype.call = function (methname, config) {
         return new Promise(function (resolve, reject) {
-            XuntongJSBridge.call(methname, config, function (result) {
+            qing_1.XuntongJSBridge.call(methname, config, function (result) {
                 if (result.success === "true" || result.success === true)
                     resolve(result.data);
                 else if (result.success === "false" || result.success === false)
-                    reject(new Error(result));
+                    reject(new error_1.Error(result));
             });
         });
-    }
-    getPersonInfo() {
+    };
+    JsbUtil.prototype.getPersonInfo = function () {
         return this.call('getPersonInfo', {});
-    }
-    getNetworkType() {
+    };
+    JsbUtil.prototype.getNetworkType = function () {
         return this.call('getNetworkType', {});
-    }
-    gotoApp(config) {
+    };
+    JsbUtil.prototype.gotoApp = function (config) {
         return this.call('gotoApp', config);
-    }
-    sinin() {
+    };
+    JsbUtil.prototype.sinin = function () {
         return this.call('localFunction', { 'name': 'signin' });
-    }
-    createChat() {
+    };
+    JsbUtil.prototype.createChat = function () {
         return this.call('localFunction', { 'name': 'createChat' });
-    }
-    selectFile(selectType) {
+    };
+    JsbUtil.prototype.selectFile = function (selectType) {
         if (selectType)
             return this.call('selectFile', {
                 selectType: selectType
             });
         else
             return this.call('selectFile', {});
-    }
-    showFile(config) {
+    };
+    JsbUtil.prototype.showFile = function (config) {
         return this.call('selectFile', config);
-    }
-    selectPic() {
+    };
+    JsbUtil.prototype.selectPic = function () {
         return this.call('selectPic', {});
-    }
-    scanQRCode(needResult, scanType) {
+    };
+    JsbUtil.prototype.scanQRCode = function (needResult, scanType) {
         return this.call('scanQRCode', {
             needResult: needResult,
             scanType: scanType
         });
-    }
-    selectOrg() {
+    };
+    JsbUtil.prototype.selectOrg = function () {
         return this.call('selectOrg', {});
-    }
-    selectDepts() {
+    };
+    JsbUtil.prototype.selectDepts = function () {
         return this.call('selectDepts', {});
-    }
-    selectPersons(isMulti, pType) {
+    };
+    JsbUtil.prototype.selectPersons = function (isMulti, pType) {
         return this.call('selectPersons', { 'isMulti': isMulti, 'pType': pType });
-    }
-    selectPerson(pType) {
+    };
+    JsbUtil.prototype.selectPerson = function (pType) {
         return this.call('selectPerson', { 'pType': pType });
-    }
-    getCurrentPosition() {
+    };
+    JsbUtil.prototype.getCurrentPosition = function () {
         return this.call('getCurrentPosition', {});
-    }
-    getAdminOpenId() {
+    };
+    JsbUtil.prototype.getAdminOpenId = function () {
         return this.call('getAdminOpenId', {});
-    }
-    socialShare(shareWay, shareType, shareContent) {
+    };
+    JsbUtil.prototype.socialShare = function (shareWay, shareType, shareContent) {
         return this.call('getAdminOpenId', { shareWay: shareWay, shareType: shareType, shareContent: shareContent });
-    }
-    createPop(config) {
+    };
+    JsbUtil.prototype.createPop = function (config) {
         return this.call('createPop', config);
-    }
-    defback() {
+    };
+    JsbUtil.prototype.defback = function () {
         return new Promise(function (resolve, reject) {
-            XuntongJSBridge.call('defback', {}, function () {
+            qing_1.XuntongJSBridge.call('defback', {}, function () {
                 resolve();
             });
         });
-    }
-    previewImage(current, urls) {
+    };
+    JsbUtil.prototype.previewImage = function (current, urls) {
         return this.call('previewImage', { current: current, urls: urls });
-    }
-    getMessageById(msgId) {
+    };
+    JsbUtil.prototype.getMessageById = function (msgId) {
         return this.call('getMessageById', { 'msgId': msgId });
-    }
-    openInBrowser(url) {
+    };
+    JsbUtil.prototype.openInBrowser = function (url) {
         return this.call('openInBrowser', { 'url': url });
-    }
-    downloadFile(fileId, fileName, fileSize) {
+    };
+    JsbUtil.prototype.downloadFile = function (fileId, fileName, fileSize) {
         return this.call('downloadFile', { 'fileId': fileId, 'fileName': fileName, 'fileSize': fileSize });
-    }
-}
-export { XuntongJSBridge, JsbUtil };
+    };
+    return JsbUtil;
+}());
+exports.JsbUtil = JsbUtil;
