@@ -37,7 +37,7 @@ console.dir(error);
 
 ```javascript
 import {jsbUtil} from "qing-es6";
-jsbUtil.selectPersons()
+jsbUtil.getNetworkType()
 .then(function(usersData){
 
 })

@@ -6,6 +6,17 @@ var error_1 = require("./error");
 var JsbUtil = (function () {
     function JsbUtil() {
     }
+    /**
+     * 基础方法，用于替代XuntongJSBridge的call方法，
+     * 取消了第三个参数（回调函数），
+     * 本类其他快捷方法都使用本方法
+     *
+     * @param {string} methname
+     * @param {*} config
+     * @returns {Promise<any>}
+     *
+     * @memberof JsbUtil
+     */
     JsbUtil.prototype.call = function (methname, config) {
         return new Promise(function (resolve, reject) {
             qing_1.XuntongJSBridge.call(methname, config, function (result) {
@@ -22,6 +33,14 @@ var JsbUtil = (function () {
     JsbUtil.prototype.getNetworkType = function () {
         return this.call('getNetworkType', {});
     };
+    /**
+     * 调用其他app
+     *
+     * @param {*} config
+     * @returns {Promise<any>}
+     *
+     * @memberof JsbUtil
+     */
     JsbUtil.prototype.gotoApp = function (config) {
         return this.call('gotoApp', config);
     };
